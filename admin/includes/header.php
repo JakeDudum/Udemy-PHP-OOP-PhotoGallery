@@ -1,5 +1,5 @@
 <?php ob_start() ?>
-<?php require_once("init.php") ?>
+<?php include("init.php") ?>
 
 <!DOCTYPE html>
 <html lang="en">
