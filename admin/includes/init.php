@@ -1,8 +1,10 @@
 <?php
 
-defined("SITE_ROOT") ? null : define("SITE_ROOT", $_SERVER['DOCUMENT_ROOT'] . '/Udemy-PHP-OOP-PhotGallery');
+defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
 
-defined("INCLUDES_PATH") ? null : define("INCLUDES_PATH", SITE_ROOT . '/admin/includes');
+defined("SITE_ROOT") ? null : define("SITE_ROOT", "C:" . DS . "xampp" . DS . "htdocs" . DS . "Udemy-PHP-OOP-PhotoGallery");
+
+defined("INCLUDES_PATH") ? null : define("INCLUDES_PATH", SITE_ROOT . DS . "admin" . DS . "includes");
 
 require_once("functions.php");
 require_once("config.php");
