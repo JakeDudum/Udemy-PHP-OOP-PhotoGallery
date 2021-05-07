@@ -32,7 +32,7 @@ class Database
     private function confirm_query($result)
     {
         if (!$result) {
-            die("Query Failed") . $this->connection->error;
+            die("Query Failed " . $this->connection->error);
         }
     }
 
