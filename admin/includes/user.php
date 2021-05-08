@@ -3,19 +3,18 @@
 class User extends Db_object
 {
     protected static $db_table = "users";
-    protected static $db_table_fields = array('username', 'password', 'first_name', 'last_name', 'user_image');
+    protected static $db_table_fields = array('username', 'password', 'first_name', 'last_name', 'filename');
     public $id;
     public $username;
     public $password;
     public $first_name;
     public $last_name;
-    public $user_image;
-    public $upload_directory = "images";
+    public $filename;
     public $image_placeholder = "http://placehold.it/300x300&text=image";
 
     public function get_image()
     {
-        return empty($this->user_image) ? $this->image_placeholder : $this->upload_directory . DS . $this->user_image;
+        return empty($this->filename) ? $this->image_placeholder : $this->upload_directory . DS . $this->filename;
     }
 
     public static function verify_user($username, $password)
