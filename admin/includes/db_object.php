@@ -90,33 +90,7 @@ class Db_object
 
     public function save()
     {
-        if (!empty($this->errors)) {
-            return false;
-        }
-
-        if (empty($this->filename) || empty($this->tmp_path)) {
-            $this->errors[] = "The file was not available";
-            return false;
-        }
-
-        $target_path = SITE_ROOT . '/admin' . '/' . $this->upload_directory . '/' . $this->filename;
-
-        if (file_exists($target_path)) {
-            $this->errors[] = "The file {$this->filename} already exists";
-            return false;
-        }
-
-        if (move_uploaded_file($this->tmp_path, $target_path)) {
-            if ($this->id) {
-                $this->update();
-                unset($this->tmp_path);
-            } else if ($this->create()) {
-                unset($this->tmp_path);
-                return true;
-            }
-        } else {
-            $this->errors[] = "The file directory does not have permission";
-        }
+        return isset($this->id) ? $this->update() : $this->create();
     }
 
     // This is passing $_FILES['uploaded_file] as an argument
