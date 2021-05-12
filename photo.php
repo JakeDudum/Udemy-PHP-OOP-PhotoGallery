@@ -115,7 +115,7 @@ $comments = Comment::find_the_comments($photo->id);
     </div>
     <!-- /.row -->
 
-    <hr>
+</div>
 
-    <!-- Footer -->
-    <?php include("includes/footer.php"); ?>
+<!-- Footer -->
+<?php include("includes/footer.php"); ?>
