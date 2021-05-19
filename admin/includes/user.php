@@ -61,10 +61,20 @@ class User extends Db_object
         return !empty($the_result_array) ? array_shift($the_result_array) : false;
     }
 
-    public function ajax_save_user_image($user_image, $user_id)
+    public function ajax_save_user_image($filename, $user_id)
     {
-        $this->user_image = $user_image;
-        $this->id = $user_id;
-        $this->save();
+        global $database;
+
+        $filename = $database->escape_string($filename);
+        $user_id = $database->escape_string($user_id);
+
+        $this->filename = $filename;
+        $this->user_id = $user_id;
+
+        $sql = "UPDATE " . self::$db_table . " SET user_image = '{$this->filename}' ";
+        $sql .= " WHERE id = {$this->id} ";
+        $update_image = $database->query($sql);
+
+        echo $this->get_image();
     }
 }
