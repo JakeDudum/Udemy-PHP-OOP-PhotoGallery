@@ -58,5 +58,9 @@ $(document).ready(function () {
         $(".inside").slideToggle("fast");
         $("#toggle").toggleClass("glyphicon-menu-down , glyphicon-menu-up");
     });
-    /* EndEdit Photo Side Bar */
+
+    /* Delete Button */
+    $(".delete-link").click(function () {
+        return confirm("Are you sure you want to delete this item?");
+    });
 });
