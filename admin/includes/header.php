@@ -23,6 +23,9 @@
     <!-- WYSIWYG Summernote Editor-->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
+    <!-- Dropzone CSS -->
+    <link href="css/dropzone.css" rel="stylesheet">
+
     <!-- Edit Photo CSS -->
     <link href="css/styles.css" rel="stylesheet">
 

@@ -13,6 +13,9 @@
   <!-- Custom JS -->
   <script src="js/scripts.js"></script>
 
+  <!-- Dropzone JS -->
+  <script src="js/dropzone.js"></script>
+
   <!-- Google Pie Chart JS -->
   <script>
     google.charts.load('current', {
