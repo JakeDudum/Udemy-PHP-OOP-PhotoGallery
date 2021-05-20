@@ -11,6 +11,7 @@ $(document).ready(function () {
         height: 100
     });
 
+    /* Modal Javascript */
     $(".modal_thumbnails").click(function () {
 
         $("#set_user_image").prop('disabled', false);
@@ -50,4 +51,12 @@ $(document).ready(function () {
             }
         });
     });
+    /* End Modal Javascript */
+
+    /* Edit Photo Side Bar */
+    $(".info-box-header").click(function () {
+        $(".inside").slideToggle("fast");
+        $("#toggle").toggleClass("glyphicon-menu-down , glyphicon-menu-up");
+    });
+    /* EndEdit Photo Side Bar */
 });
