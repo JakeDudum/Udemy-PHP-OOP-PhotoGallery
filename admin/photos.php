@@ -33,6 +33,8 @@ $photos = Photo::find_all();
                     Photos
                 </h1>
 
+                <p class="bg-success"><?php echo $message; ?></p>
+
                 <div class="col-md-12">
                     <table class="table table-hover">
                         <thead>
