@@ -2,7 +2,6 @@
 
 class Session
 {
-
     private $signed_in = false;
     public $user_id;
     public $message;
@@ -78,3 +77,4 @@ class Session
 }
 
 $session = new Session();
+$message = $session->message();

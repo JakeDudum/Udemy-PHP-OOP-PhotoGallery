@@ -19,9 +19,14 @@ if (empty($_GET['id'])) {
             $user->last_name = $_POST['last_name'];
             $user->password = $_POST['password'];
 
-            $user->set_file($_FILES['user_image']);
-            $user->upload_photo();
+            if (!empty($_FILES['user_image'])) {
+                $user->set_file($_FILES['user_image']);
+                $user->upload_photo();
+            }
+
             $user->save();
+            $session->message("User {$user->username} has been updated");
+            redirect("users.php");
         }
     }
 }
